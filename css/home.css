@@ -1,0 +1,180 @@
+.indexpage{
+    background-image: url(../images/index.jpg);
+    color: white;
+}
+
+.overlay {
+border-top: 4px solid #ff0037;
+position: absolute;
+left: 0;
+top: 0;
+width: 100%;
+height: 100%; 
+background-color: rgba(14, 17, 24, 0.85);
+}
+@font-face {
+    font-family: 'heavy_data-webfont.woff';
+    src:url('./fonts/heavy_data-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+.welcome{
+
+    font-family: 'heavy_data-webfont.woff', helvetica, sans-serif;
+    font-size: 50px;
+    text-align: center;
+}
+@font-face {
+  font-family: 'Calligraffiti-webfont.woff';
+  src:url('./fonts/Calligraffiti-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+.Intro{
+    font-family: 'Calligraffiti-webfont.woff', helvetica, sans-serif;
+    font-size: 30px;
+    text-align: center;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  background-color: #F5F5F5;
+
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #f90a23;
+  background-image: -webkit-linear-gradient(45deg,rgba(255, 255, 255, .2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .2) 50%, rgba(255, 255, 255, .2) 75%, transparent 75%, transparent);
+}
+
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+  background-color: #F5F5F5;
+}
+
+:root {
+    --base-grid: 8px;
+    --colour-white: #ff0037;
+    --colour-black:   #1e2530;
+  }
+
+  .links {
+    --link-size: calc(var(--base-grid)*20);
+    color: var(--colour-black);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: 50vh;
+  }
+  
+  .links__list {
+    position: relative;
+    list-style: none;
+  }
+  
+  .links__item {
+    width: var(--link-size);
+    height: var(--link-size);
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-top: calc(var(--link-size)/-2);
+    margin-left: calc(var(--link-size)/-2);
+    --angle: calc(360deg/var(--item-total));
+    --rotation: calc(140deg + var(--angle)*var(--item-count));
+    transform: rotate(var(--rotation)) translate(calc(var(--link-size) + var(--base-grid)*2)) rotate(calc(var(--rotation)*-1));
+  }
+  
+  .links__link {
+    opacity: 0;
+    animation: on-load .3s ease-in-out forwards;
+    animation-delay: calc(var(--item-count)*150ms);
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    position: relative;
+    background-color: var(--colour-white);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  .links__icon {
+    width: calc(var(--base-grid)*8);
+    height: calc(var(--base-grid)*8);
+    transition: all .3s ease-in-out;
+    fill: var(--colour-black);
+  }
+  
+  .links__text {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    text-align: center;
+    height: calc(var(--base-grid)*2);
+    font-size: calc(var(--base-grid)*2);
+    display: none;
+    bottom: calc(var(--base-grid)*8.5);
+    animation: text .3s ease-in-out forwards;
+  }
+  
+  .links__link:after {
+    content: "";
+    background-color: transparent;
+    width: var(--link-size);
+    height: var(--link-size);
+    border: 2px dashed var(--colour-white);
+    display: block;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: all .3s cubic-bezier(.53,-.67,.73,.74);
+    transform: none;
+    opacity: 0;
+  }
+  
+  .links__link:hover .links__icon {
+    transition: all .3s ease-in-out;
+    transform: translateY(calc(var(--base-grid)*-1));
+  }
+  
+  .links__link:hover .links__text {
+    display: block;
+  }
+  
+  .links__link:hover:after {
+    transition: all .3s cubic-bezier(.37,.74,.15,1.65);
+    transform: scale(1.1);
+    opacity: 1;
+  }
+  
+  @keyframes on-load {
+    0% {
+      opacity: 0;
+      transform: scale(.3);
+    }
+    70% {
+      opacity: .7;
+      transform: scale(1.1);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  
+  @keyframes text {
+    0% {
+      opacity: 0;
+      transform: scale(0.3) translateY(0);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1) translateY(calc(var(--base-grid)*5));
+    }
+  }
