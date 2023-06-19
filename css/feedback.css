@@ -26,9 +26,9 @@
     font-weight: normal;
     font-style: normal;
 }
-/* body { */
-/* } */
-main{
+
+body{
+/* main{ */
   background-color: #E1EBBD;
     background-image: -webkit-linear-gradient(45deg, #92BAAC 45px, transparent 45px), -webkit-linear-gradient(45deg, #92BAAC 45px, transparent 45px, transparent 91px, #E1EBBD 91px, #E1EBBD 135px, transparent 135px), -webkit-linear-gradient(135deg, #92BAAC 23px, transparent 23px, transparent 68px, #92BAAC 68px, #92BAAC 113px, transparent 113px, transparent 158px, #92BAAC 158px);
     background-image: -moz-linear-gradient(45deg, #92BAAC 45px, transparent 45px), -moz-linear-gradient(45deg, #92BAAC 45px, transparent 45px, transparent 91px, #E1EBBD 91px, #E1EBBD 135px, transparent 135px), -moz-linear-gradient(135deg, #92BAAC 23px, transparent 23px, transparent 68px, #92BAAC 68px, #92BAAC 113px, transparent 113px, transparent 158px, #92BAAC 158px);
@@ -239,14 +239,6 @@ ul, li {
   background-color: #F5F5F5;
 }
 
-/* gallery of pics */
-
-/* body {
-  margin: 0;
-  min-height: 100vh;
-  display: grid;
-  background: #aabbfb;
-} */
 .gallery {
   place-content: center;
   --s: 200px; /* control the size */
@@ -282,3 +274,10 @@ ul, li {
 .gallery > img:nth-child(4) {--_x: calc(-50% - .5*var(--g))}
 .gallery > img:nth-child(5), 
 .gallery > img:nth-child(6) {--_x: calc( 50% + .5*var(--g))}
+
+#btna td input{
+	width: 60%;
+}
+#btna td{
+  padding: 1px;
+}
